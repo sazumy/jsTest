@@ -7,10 +7,21 @@ function App() {
   const [count, setCount] = useState(0);
   const name = "Patty";
   const greet = (name: string) => <p>Hello, {name || "Guest"}!</p>;
+  const n = Math.floor(Math.random() * 10); // 0〜9 のランダムな整数を生成
+  const threshold = 5;
+  const list = ["Patty", "Rolley", "Bobby"];
 
   return (
     <>
       <div>{greet(name)}</div>
+      <div>{n > threshold && <p>{n} は {threshold} よりも大きい値です</p>}</div>
+      <div>{n > threshold || <p>{n} は {threshold} 以下の値です</p>}</div>
+      <div>{n % 2 === 0 ? <p>{n} は偶数です</p> : <p>{n} は奇数です</p>}</div>
+      <ul>
+        {list.map((name) => (
+          <li>Hello, {name}!</li>
+        ))}
+      </ul>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
