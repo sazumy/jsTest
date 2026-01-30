@@ -13,8 +13,7 @@ interface PlayerListProps {
   players: Player[];
 }
 
-function PlayerList(props: PlayerListProps) {
-  const { school, players } = props;
+function PlayerList({ school, players }: PlayerListProps) {
 
   return (
     <div className="w-96">
@@ -32,7 +31,7 @@ function PlayerList(props: PlayerListProps) {
               <p className="flex text-gray-400">
                 <span>{player.grade}年生</span>
                 <span className="mx-2" />
-                <span>{player.height ? player.height : '???'}cm</span>
+                <span>{player.height ?? '???'}cm</span>
               </p>
             </div>
           </li>
