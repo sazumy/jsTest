@@ -27,8 +27,8 @@ function Timer({ maxCount = 60 }: TimerProps) {
     if (countLeft === 0) {
       setCountLeft(maxCount);
     }
-  });
-  // }, [countLeft, maxCount]);
+  // });
+  }, [countLeft, maxCount]);
 
   return (
     <Card className="w-80 shadow-md gap-2">
