@@ -6,7 +6,9 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   function increment() {
-    setCount((c) => c + 1);
+    // setCount((c) => c + 1);
+    const range = (n: number) => [...Array(n).keys()];
+    range(3).forEach(() => setCount((c) => c + 1));
   }
 
   function reset() {
@@ -26,7 +28,7 @@ function Counter() {
           className="flex-1 bg-green-600 hover:bg-green-700"
           onClick={increment}
         >
-          +1
+          +3
         </Button>
         <Button className="flex-1 bg-red-600 hover:bg-red-700" onClick={reset}>
           Reset
